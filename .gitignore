@@ -1,0 +1,19 @@
+# Ignore Python virtual environments
+myenv/
+venv/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore system files
+.DS_Store
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore environment variable files if you have any
+.env

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laksh_v2 - Your Emotional Companion</title>
+        <link rel="stylesheet" href="static/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div id="intro">
+            <img src="static/laksh.png" style="border-radius: 50%;height: 100px;width: 100px;">
+            <h1>Laksh_V2</h1>
+            <button style="border: 0; border-radius: 50px;width: 150px; height: 40px;background-color: rgb(127, 234, 255);" onclick="showchat()">Let's Chat 💖!!!</button>
+        </div>
+        
+        <div id="chat" class="head">
+            <span>
+                <img src="static/laksh.png" style="width: 50px; height: 50px;border-radius: 60%;">
+                <h1>Laksh V2</h1>
+            </span>
+            <p>Your Emotional companion who tries to understand what you feel 💖</p>
+            
+            <div class="chat-box">
+                <div class="chat-top">
+                    <h2>Laksh v2</h2>
+                    <div class="emotion">
+                        <b><p id="emotion">Joy</p></b>
+                        <b><p id="confidence">(1)</p></b>
+                        <img id="emotion-img" src="static/joy.png" alt="emotion">
+                    </div>
+                </div>
+                
+                <div id="chat-messages"></div>
+                
+                <div class="msg">
+                    <input id="userinput" type="text" placeholder="type your message..." class="chat-input" autocomplete="off"/>
+                    <button id="user-input" class="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="static/script.js"></script>
+    </body>
+</html>

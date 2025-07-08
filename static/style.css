@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(45deg, teal, white);
+}
+
+#intro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#chat {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-top {
+    padding: 10px;
+    background-color: rgb(118, 231, 223);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-top h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.emotion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.emotion img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    order: 3; /* Move image to the end */
+}
+
+.emotion p {
+    margin: 0;
+    text-align: center;
+}
+
+#emotion {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#confidence {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.msg {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.send-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 231, 223);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: rgb(100, 180, 230);
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.chat-bubble.user {
+    background-color: #b0f3ff;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-bubble.bot {
+    background-color: #ffffff;
+    margin-right: auto;
+    border: 1px solid #eee;
+    border-bottom-left-radius: 5px;
+    border-left: 4px solid #76e7df;
+}
+
+.cta-message {
+    font-style: italic;
+    margin: 8px 0;
+    padding: 8px 12px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    border-left: 3px solid #76e7df;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Typing indicator animation */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #e0e0e0;
+    color: transparent;
+    min-width: 40px;
+    min-height: 24px;
+    border-radius: 16px;
+    padding: 6px 12px;
+    max-width: 70px;
+}
+
+.typing-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #888;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: blink 1.4s infinite both;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0.6; }
+    40% { opacity: 1; }
+}
+
+/* TTS Button Styles */
+.tts-button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.tts-button {
+    background-color: #76e7df;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.tts-button.playing {
+    background-color: #4CAF50;
+    animation: pulse 1.5s infinite;
+}
+
+.tts-button i {
+    color: white;
+    font-size: 16px;
+}
+
+.tts-button:hover:not(.playing) {
+    background-color: #5fd1c7;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Emotion-specific colors */
+.joy-color { border-left-color: #FFD700 !important; }
+.love-color { border-left-color: #FF69B4 !important; }
+.fear-color { border-left-color: #8B0000 !important; }
+.surprise-color { border-left-color: #9370DB !important; }
+.anger-color { border-left-color: #FF4500 !important; }
+.sadness-color { border-left-color: #1E90FF !important; }
